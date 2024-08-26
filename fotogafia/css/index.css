@@ -1,0 +1,159 @@
+#header {
+width: 1357px;
+height: 50px;
+background-color:#256D56;
+margin: -9px;
+}
+a {
+    text-decoration-line: none;
+}
+#cabecalho {
+    width: 1340px;
+    height: 240px;
+    background-color: white;
+    margin: -9px;
+}
+#section1 {
+    width: 1330px;
+    height: 400px;
+    margin: -3px;
+    background-color: white;
+}
+#circulo {
+    position: absolute; /* Mantém o círculo no fundo */
+    width: 60vw; /* 80% da largura da viewport */
+    height: 50vw; /* Mantém o círculo como um círculo perfeito */
+    top: 12vw; /* Ajusta para centralizar verticalmente */
+    left: -29vw; /* Ajusta para centralizar horizontalmente */
+    border-radius: 200%;
+    background: linear-gradient(45deg, #f7f7f7, #d3d3d3);
+    z-index: 0; /* Para que outros conteúdos possam aparecer acima do círculo */
+    transform: rotate(130deg); /* Remove a rotação para o efeito visual padrão */
+}
+
+#button {
+    width: 100px;
+    height: 50px;
+    background-color:#EFE3C8;
+    color: #564C9A;
+    font-size: 20px;
+    margin-left: 700px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+}
+#section2 {
+    width: 1300px;
+    height: 300px;
+    background-color: white;
+}
+body {
+    font-family: Arial, sans-serif;
+}
+
+
+#search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    border-radius: 25px;
+    padding: 5px 10px;
+}
+
+#search-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#search-button img {
+    width: 20px;
+    height: 20px;
+}
+#button-prev {
+    width: 50px;
+    height: 50px;
+    background-color: darkblue;
+    border-radius: 60px;
+margin-left: 10px;
+margin-top: 20px;
+}
+    .cards {
+        position: relative;
+        width: 400px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+        display: inline-block;
+    }
+
+.card .conteudo {
+    padding: 10px;
+    text-align: center;
+}
+
+.card .conteudo h2 {
+    margin: 5px 0;
+    font-size: 20em;
+}
+
+.card .conteudo p {
+    color: #666;
+    font-size: 20px;
+}
+
+#button-next {
+    width: 50px;
+    height: 50px;
+    background-color: darkblue;
+    border-radius: 60px;
+    margin-left: 1290px;
+    margin-top: -206px;
+}
+.colocacao {
+    width: 80px;
+    height: 80px;
+    background-color: white;
+    margin-left: -230px;
+    border-radius: 40px;
+margin-top: 50px;
+}
+
+
+
+.carrossel-container {
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.carrossel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carrossel-item {
+    min-width: 33.3333%; /* Para mostrar 3 imagens por vez */
+    box-sizing: border-box;
+}
+
+
+.carousel-button img {
+    width: 50px;
+    height: 50px;
+}
+
+.prev {
+    left: -90px; /* Ajuste para que o botão fique fora do carrossel */
+}
+
+.next {
+    right: -130px; /* Ajuste para que o botão fique fora do carrossel */
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}

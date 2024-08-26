@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="content-language" content="pt-BR">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta property="og:type" content="website">
+    <meta name="template" content="dove4-home-page-template">
+    <title>JT - A melhor fotógrafa do RJ</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <style>
+        body {
+            overflow-x: hidden; /* Oculta a rolagem horizontal */
+        }
+
+        .cursivo {
+            font-style: italic;
+            text-decoration-line: none;
+        }
+
+        .depoimento {
+            padding: 10px;
+            color: #EFE3C8;
+        }
+
+        .autor {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #A7B4CE;
+        }
+
+        .card {
+            width: 350px;
+            height: 345px;
+            padding: 5px;
+            background-color: #256D56;
+            display: inline-block;
+            margin-right: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-family: Arial, sans-serif;
+            margin-bottom: -20px;
+        }
+
+        .carrossel-container {
+            width: 100%; /* Ajuste a largura do contêiner para preencher o espaço disponível */
+            max-width: 1200px; /* Defina um tamanho máximo se necessário */
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden; /* Oculta qualquer conteúdo excedente */
+            text-decoration-line: none;
+        }
+
+        .carrossel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carrossel-item {
+            min-width: 33.3333%; /* Para mostrar 3 imagens por vez */
+            box-sizing: border-box;
+            margin-left: 30px;
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #C8657B;
+            border-radius: 50px;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .carousel-button img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .prev {
+            left: 0; /* Ajuste para garantir que o botão esteja dentro da área visível */
+        }
+
+        .next {
+            right: 0;
+             /* Ajuste para garantir que o botão esteja dentro da área visível */
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .cards {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .conteudo {
+            text-align: center;
+        }
+
+        #playButton {
+            font-size: 50px;
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            color: white;
+            transform: translate(-50%, -50%);
+            z-index: 10; /* Garante que o botão de play fique acima do card */
+        }
+
+        /* Estilo do vídeo */
+        #myVideo {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: none; /* Inicialmente escondido */
+            z-index: 5; /* Fica atrás do botão de play */
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <br>
+        <a href="pagina.html" style="color: white; font-size: 17px; margin-left: 800px; padding: 35px; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Quer me conhecer?></a>
+        <a href="pagina.html" style="color: white; font-size: 17px;">Conheça um pouco do meu trabalho!></a>
+    </div>
+    <br>
+    <div id="cabecalho">
+        <br>
+        <a href="produtos.html" style="color:#A7B4CE; font-size: 24px; margin-left: 200px; padding: 45px; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-decoration: none;">PRODUTOS</a>
+        <a href="produtos.html" style="color: #A7B4CE; font-size: 24px; margin-left: 100px; padding: 15px; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-decoration: none;">MINHA MISSÃO</a>
+        <a href="produtos.html" style="color:#A7B4CE; font-size: 24px; margin-left: 100px; padding: 45px; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-decoration: none;">DICAS E GUIAS</a>
+        <img src="img/search.svg" width="20px" height="20px" style="margin-left: 30px;" alt="Ícone de pesquisa">
+        <input type="text" placeholder="Digite algo aqui..." id="search-input" style="margin-right: -10px;">
+        <hr>
+    </div>
+
+    <div id="section1">
+        <br>
+        
+
+        <div id="circulo"></div>
+    
+        <h1 style="color: #564C9A;margin-top: -80px; margin-left: 750px; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 35px;">"Transforme seus momentos especiais em memórias eternas com a nossa fotógrafa experiente. Cada clique é um passo em direção a uma recordação inesquecível. Contrate agora e capture a magia dos seus momentos mais preciosos!"
+        </h1>
+        <center>
+            <div id="button"><b>Saiba Mais</b></div>
+        </center>
+    </div>
+    <br><br><br><br><br><br><br><br>
+
+    <div class="carrossel-container">
+        <button class="carousel-button prev" id="prev" aria-label="Anterior">
+            <img src="img/prev.svg" alt="Botão anterior">
+        </button>
+        <div class="carrossel" id="carrossel">
+            <!-- Adicione os itens do carrossel aqui -->
+            <div class="carrossel-item">
+                <a href="prewedding.html">
+                    <div class="cards" style="margin: 25px; margin-top: 3px;">
+                        <img src="album/prewedding.jpg" width="400px" height="300px" alt="Ensaio fotográfico de Pré Weeding" style="text-decoration-line: none;">
+                        <div id="playButton">▶️</div>
+                        <video id="myVideo" width="600" controls style="display: none;">
+                          <source src="caminho/para/seu/video.mp4" type="video/mp4">
+                          Seu navegador não suporta o elemento de vídeo.
+                      </video>
+                  
+                      <script>
+                         
+                         document.getElementById('playButton').addEventListener('click', function() {
+            var video = document.getElementById('myVideo');
+            video.style.display = 'block'; // Mostra o vídeo
+            video.play(); // Inicia a reprodução
+            this.style.display = 'none'; // Esconde o botão de play após clicar
+        });
+
+                      </script>
+                        <div class="conteudo">
+                            <p align="center" class="cursivo" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 20px; color: #E7A8C7;"><b>Ensaio fotográfico de Pré Weeding</b></p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="carrossel-item">
+                <a href="casamento.html">
+                    <div class="cards" style="margin: 25px; margin-top: 3px;">
+                        <img src="album/casamento.jpg" width="400px" height="300px" alt="Ensaio fotográfico de Casamento">
+                        <div id="playButton">▶️</div>
+                        <video id="myVideo" width="600" controls style="display: none;">
+                          <source src="caminho/para/seu/video.mp4" type="video/mp4">
+                          Seu navegador não suporta o elemento de vídeo.
+                      </video>
+                  
+                        <div class="conteudo">
+                            <p align="center" class="cursivo" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 20px; color: #E7A8C7; text-decoration: none;"><b>Ensaio fotográfico de Casamento</b></p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="carrossel-item">
+                <a href="parto.html">
+                    <div class="cards" style="margin: 25px; margin-top: 3px;">
+                        <img src="album/gestante.jpg" width="400px" height="300px" alt="Ensaio fotográfico de Gestante">
+                        <div id="playButton">▶️</div>
+                        <video id="myVideo" width="600" controls style="display: none;">
+                          <source src="caminho/para/seu/video.mp4" type="video/mp4">
+                          Seu navegador não suporta o elemento de vídeo.
+                      </video>
+                  
+                        <div class="conteudo">
+                            <p align="center" class="cursivo" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 20px; color: #E7A8C7;"><b>Ensaio fotográfico de Gestante</b></p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="carrossel-item">
+                <a href="parto.html">
+                    <div class="cards" style="margin: 25px; margin-top: 3px; margin-left: 40px;" >
+                        <img src="album/parto.jpg" width="400px" height="300px" alt="Ensaio fotográfico de Parto">
+                        <div id="playButton">▶️</div>
+                        <video id="myVideo" width="600" controls style="display: none;">
+                          <source src="caminho/para/seu/video.mp4" type="video/mp4">
+                          Seu navegador não suporta o elemento de vídeo.
+                      </video>
+                  
+                        <div class="conteudo">
+                            <p align="center" class="cursivo" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 20px; color: #E7A8C7;"><b>Ensaio fotográfico de Parto</b></p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="carrossel-item">
+              <a href="parto.html">
+                  <div class="cards" style="margin: 25px; margin-top: 3px;">
+                      <img src="album/lifestylenewborn.jpg" width="400px" height="300px" alt="Parto">
+                      <div id="playButton">▶️</div>
+                      <video id="myVideo" width="600" controls style="display: none;">
+                        <source src="caminho/para/seu/video.mp4" type="video/mp4">
+                        Seu navegador não suporta o elemento de vídeo.
+                    </video>
+                
+                      <div class="conteudo">
+                          <p align="center" class="cursivo" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 20px; color: black;"><b>Ensaio fotográfico de Parto</b></p>
+                      </div>
+                  </div>
+              </a>
+          </div>
+          <div class="carrossel-item">
+              <a href="parto.html">
+                  <div class="cards" style="margin: 25px; margin-top: 3px;">
+                      <img src="album/eventocorporativo.jpg" width="400px" height="300px" alt="Parto">
+                      <div id="playButton">▶️</div>
+                      <video id="myVideo" width="600" controls style="display: none;">
+                        <source src="caminho/para/seu/video.mp4" type="video/mp4">
+                        Seu navegador não suporta o elemento de vídeo.
+                    </video>
+                
+                      <div class="conteudo">
+                          <p align="center" class="cursivo" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 20px; color: black;"><b>Ensaio fotográfico de Parto</b></p>
+                      </div>
+                  </div>
+              </a>
+          </div>
+          <div class="carrossel-item">
+            <a href="parto.html">
+                <div class="cards" style="margin: 25px; margin-top: 3px;">
+                    <img src="album/ensaiodemarcapessoal.jpg" width="400px" height="300px" alt="Parto">
+                    <div id="playButton">▶️</div>
+                    <video id="myVideo" width="600" controls style="display: none;">
+                      <source src="caminho/para/seu/video.mp4" type="video/mp4">
+                      Seu navegador não suporta o elemento de vídeo.
+                  </video>
+              
+                    <div class="conteudo">
+                        <p align="center" class="cursivo" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 20px; color: black;"><b>Ensaio fotográfico de marca pessoal</b></p>
+                    </div>
+                </div>
+            </a>
+        </div>
+  
+        <div class="carrossel-item">
+          <a href="parto.html">
+              <div class="cards" style="margin: 25px; margin-top: 3px;">
+                  <img src="album/ensaiofotograficodeturismo.jpg" width="400px" height="300px" alt="Parto">
+                  <div id="playButton">▶️</div>
+                  <video id="myVideo" width="600" controls style="display: none;">
+                    <source src="caminho/para/seu/video.mp4" type="video/mp4">
+                    Seu navegador não suporta o elemento de vídeo.
+                </video>
+            
+                  <div class="conteudo">
+                      <p align="center" class="cursivo" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 20px; color: black;"><b>Ensaio fotográfico de turismo</b></p>
+                  </div>
+              </div>
+          </a>
+      </div>
+  
+      <div class="carrossel-item">
+        <a href="parto.html">
+            <div class="cards" style="margin: 25px; margin-top: 3px;">
+                <img src="album/ensaioboudor.jpg" width="400px" height="300px" alt="Parto">
+                <div id="playButton">▶️</div>
+                <video id="myVideo" width="600" controls style="display: none;">
+                  <source src="caminho/para/seu/video.mp4" type="video/mp4">
+                  Seu navegador não suporta o elemento de vídeo.
+              </video>
+          
+                <div class="conteudo">
+                    <p align="center" class="cursivo" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 20px; color: black;"><b>Ensaio fotográfico de boudoir</b></p>
+                </div>
+            </div>
+        </a>
+    </div>
+  
+  
+    <div class="carrossel-item">
+      <a href="parto.html">
+          <div class="cards" style="margin: 25px; margin-top: 3px;">
+              <img src="album/ensaiofotograficodemoda.jpg" width="400px" height="300px" alt="Parto">
+              <div id="playButton">▶️</div>
+              <video id="myVideo" width="600" controls style="display: none;">
+                <source src="caminho/para/seu/video.mp4" type="video/mp4">
+                Seu navegador não suporta o elemento de vídeo.
+            </video>
+        
+              <div class="conteudo">
+                  <p align="center" class="cursivo" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 20px; color: black;"><b>Ensaio fotográfico de moda</b></p>
+              </div>
+          </div>
+      </a>
+  </div>
+  
+  
+  <div class="carrossel-item">
+    <a href="parto.html">
+        <div class="cards" style="margin: 25px; margin-top: 3px;">
+            <img src="album/coberturafotograficadefestas.jpg" width="400px" height="300px" alt="Parto">
+            <div id="playButton">▶️</div>
+            <video id="myVideo" width="600" controls style="display: none;">
+              <source src="caminho/para/seu/video.mp4" type="video/mp4">
+              Seu navegador não suporta o elemento de vídeo.
+          </video>
+      
+            <div class="conteudo">
+                <p align="center" class="cursivo" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 20px; color: black;"><b>Cobertura fotográfica de festas</b></p>
+            </div>
+        </div>
+    </a>
+  </div>
+  
+  <div class="carrossel-item">
+  <a href="parto.html">
+      <div class="cards" style="margin: 25px; margin-top: 3px;">
+          <img src="album/cobeturafotográficadefestainfantil.jpg" width="400px" height="300px" alt="Parto">
+          <div id="playButton">▶️</div>
+          <video id="myVideo" width="600" controls style="display: none;">
+            <source src="caminho/para/seu/video.mp4" type="video/mp4">
+            Seu navegador não suporta o elemento de vídeo.
+        </video>
+    
+          <div class="conteudo">
+              <p align="center" class="cursivo" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 20px; color: black;"><b> Cobertura fotográfica de festas infantis</b></p>
+          </div>
+      </div>
+  </a>
+  </div>
+  
+  <div class="carrossel-item">
+  <a href="parto.html">
+      <div class="cards" style="margin: 25px; margin-top: 3px;">
+          <img src="album/ensaiofotografico15anos.jpg" width="400px" height="300px" alt="Parto">
+          <div id="playButton">▶️</div>
+          <video id="myVideo" width="600" controls style="display: none;">
+            <source src="caminho/para/seu/video.mp4" type="video/mp4">
+            Seu navegador não suporta o elemento de vídeo.
+        </video>
+    
+          <div class="conteudo">
+              <p align="center" class="cursivo" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 20px; color: black;"><b>Ensaio fotográfico de 15 anos</b></p>
+          </div>
+      </div>
+  </a>
+  </div>
+  
+  <div class="carrossel-item">
+  <a href="parto.html">
+      <div class="cards" style="margin: 25px; margin-top: 3px;">
+          <img src="album/ensaioinfantil.jpg" width="400px" height="300px" alt="Parto">
+          <div id="playButton">▶️</div>
+          <video id="myVideo" width="600" controls style="display: none;">
+            <source src="caminho/para/seu/video.mp4" type="video/mp4">
+            Seu navegador não suporta o elemento de vídeo.
+        </video>
+    
+          <div class="conteudo">
+              <p align="center" class="cursivo" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 20px; color: black;"><b> Ensaio fotográfico infantil</b></p>
+          </div>
+      </div>
+  </a>
+  </div>
+  <div class="carrossel-item">
+  <a href="parto.html">
+      <div class="cards" style="margin: 25px; margin-top: 3px;">
+          <img src="album/coberturadefesta de15 anos.jpg" width="400px" height="300px" alt="Parto">
+          <div id="playButton">▶️</div>
+          <video id="myVideo" width="600" controls style="display: none;">
+            <source src="caminho/para/seu/video.mp4" type="video/mp4">
+            Seu navegador não suporta o elemento de vídeo.
+        </video>
+    
+          <div class="conteudo">
+              <p align="center" class="cursivo" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 20px; color: black;"><b>Cobertura de festa de debutante</b></p>
+          </div>
+      </div>
+  </a>
+  </div>
+      </div>
+       
+        <button class="carousel-button next" id="next" aria-label="Próximo">
+            <img src="img/next.svg" alt="Botão próximo">
+        </button>
+    </div>
+ </div>
+   
+    <br><br>
+    <div id="section2">
+      <br>
+      <br>
+      <br>
+      <center>
+          <h1 style="font-family: Arial, Helvetica, sans-serif; color: #564C9A;">Meus depoimentos</h1>
+          <br>
+          <div class="depoimentos-container">
+              <div class="card">
+                  <div class="depoimento" style="margin-bottom: -10px;">
+                      "A Jennifer é uma fotógrafa incrível! As fotos do meu ensaio profissional ficaram espetaculares. A atenção aos detalhes e o profissionalismo dela são incomparáveis. Estou muito feliz com o resultado e recomendo seu trabalho a todos que buscam registrar momentos especiais com qualidade e sensibilidade."
+                  </div>
+                  <div class="autor">
+                      Rosa Pereira
+                  </div>
+                  <br>
+                  <img src="img/estrelas.png" width="100px" height="90px" style="margin-top: -20px;">
+              </div>
+              <div class="card" style="margin-top: -100px;">
+                  <div class="depoimento">
+                      "Contratar a Jennifer para o meu casamento foi uma das melhores decisão que tomamos. Ela capturou cada emoção e detalhe de forma mágica. As fotos são verdadeiras obras de arte e serão lembranças preciosas para sempre. Muito obrigada Jennifer, pelo trabalho impecável!"
+                  </div>
+                  <div class="autor">
+                      Linda Tavares
+                  </div>
+                  <br>
+                  <img src="img/estrelas.png" width="100px" height="90px" alt="Estrelas de avaliação">
+              </div>
+    
+              <div class="card">
+                  <div class="depoimento">
+                      "A Jennifer fez um ensaio fotográfico maravilhoso do nascimento do meu filho. Ela foi extremamente sensível e respeitosa durante todo o processo. As fotos são simplesmente emocionantes e capturam a essência desse momento tão especial. Recomendo de coração!"
+                  </div>
+                  <div class="autor">
+                      Miguel Carvalho
+                  </div>
+                  <br>
+                  <img src="img/estrelas.png" width="100px" height="90px" alt="Estrelas de avaliação">
+              </div>
+          </div>
+      </center>
+    
+</body>
+<script>
+    const carrossel = document.getElementById('carrossel');
+    const prevButton = document.getElementById('prev');
+    const nextButton = document.getElementById('next');
+
+    let index = 0;
+    const items = document.querySelectorAll('.carrossel-item');
+    const totalItems = items.length;
+    const visibleItems = 3; // Número de itens visíveis no carrossel
+    const itemWidth = 100 / visibleItems; // Largura dos itens do carrossel
+
+    function updateCarousel() {
+        const offset = -index * itemWidth;
+        carrossel.style.transform = `translateX(${offset}%)`;
+    }
+
+    prevButton.addEventListener('click', () => {
+        index = (index === 0) ? totalItems - visibleItems : index - 1;
+        updateCarousel();
+    });
+
+    nextButton.addEventListener('click', () => {
+        index = (index === totalItems - visibleItems) ? 0 : index + 1;
+        updateCarousel();
+    });
+</script>
+</html>
